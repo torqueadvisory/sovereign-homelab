@@ -1,0 +1,15 @@
+# Homepage — widgets.yaml (header strip)
+- datetime:
+    text_size: xl
+    format:
+      timeStyle: short
+      dateStyle: long
+- openmeteo:
+    label: <YOUR_CITY>
+    latitude: <LAT>
+    longitude: <LON>
+    units: imperial
+    cache: 5
+- search:
+    provider: duckduckgo
+    target: _blank

@@ -1,0 +1,85 @@
+# Homepage — services.yaml  (SANITIZED EXAMPLE)
+# Copy to services.yaml and fill in your own values. The real file is .gitignore'd.
+#   <TAILNET>       -> your tailnet, e.g. tailXXXXXX.ts.net
+#   <MINI_TS_IP>    -> the server's Tailscale IP, e.g. 100.x.y.z
+#   <IFACE>         -> the host's active network interface (e.g. en0 / en1)
+#   <...>_KEY/TOKEN -> generate your own; never commit the real one
+
+- Services:
+    - Nextcloud:
+        href: https://command-center.<TAILNET>
+        description: Files & Sync
+        icon: nextcloud.png
+        server: my-docker
+        container: nextcloud-server-app-1
+        widget:
+          type: nextcloud
+          url: http://<MINI_TS_IP>:8080
+          username: <NEXTCLOUD_USERNAME>
+          password: <NEXTCLOUD_APP_PASSWORD>   # app password, not login pw
+          fields: ["freespace", "numfiles", "activeusers"]
+    - Immich:
+        href: http://<MINI_TS_IP>:2283
+        description: Photos
+        icon: immich.png
+        server: my-docker
+        container: immich_server
+        widget:
+          type: immich
+          url: http://host.docker.internal:2283
+          key: <IMMICH_API_KEY>
+          version: 2
+    - Vaultwarden:
+        href: https://command-center.<TAILNET>:8443
+        description: Passwords
+        icon: vaultwarden.png
+        server: my-docker
+        container: vaultwarden
+    - Job Dashboard:
+        href: https://command-center.<TAILNET>:9443
+        description: Application Tracker
+        icon: mdi-briefcase
+        server: my-docker
+        container: dashboard
+
+- System:
+    - CPU:
+        widget:
+          type: glances
+          url: http://host.docker.internal:61208
+          version: 4
+          metric: cpu
+          chart: true
+    - Memory:
+        widget:
+          type: glances
+          url: http://host.docker.internal:61208
+          version: 4
+          metric: memory
+          chart: true
+    - Network:
+        widget:
+          type: glances
+          url: http://host.docker.internal:61208
+          version: 4
+          metric: network:<IFACE>
+          chart: true
+    - Internal SSD:
+        widget:
+          type: glances
+          url: http://host.docker.internal:61208
+          version: 4
+          metric: "fs:/"
+    - External Drive:
+        widget:
+          type: glances
+          url: http://host.docker.internal:61208
+          version: 4
+          metric: "fs:/Volumes/<EXTERNAL_DRIVE_NAME>"
+    - Disk I/O:
+        widget:
+          type: glances
+          url: http://host.docker.internal:61208
+          version: 4
+          metric: disk:disk0
+          chart: true

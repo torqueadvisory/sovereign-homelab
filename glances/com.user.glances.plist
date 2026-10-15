@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- macOS LaunchAgent: starts Glances web server on boot, restarts it if it dies.
+     Install to ~/Library/LaunchAgents/ and load with:
+       launchctl load ~/Library/LaunchAgents/com.user.glances.plist
+     Feeds live host metrics to the Homepage dashboard on :61208. -->
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.user.glances</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/opt/homebrew/bin/glances</string>
+    <string>-w</string>
+    <string>-t</string>
+    <string>2</string>
+  </array>
+  <key>RunAtLoad</key>
+  <true/>
+  <key>KeepAlive</key>
+  <true/>
+  <key>StandardOutPath</key>
+  <string>/tmp/glances.log</string>
+  <key>StandardErrorPath</key>
+  <string>/tmp/glances.err</string>
+</dict>
+</plist>

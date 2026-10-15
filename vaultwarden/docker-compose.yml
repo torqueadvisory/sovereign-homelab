@@ -1,0 +1,15 @@
+# Vaultwarden — self-hosted Bitwarden-compatible vault  (SANITIZED TEMPLATE)
+# Copy to a real compose + .env on the host. Keep ADMIN_TOKEN out of version control.
+
+services:
+  vaultwarden:
+    image: vaultwarden/server:latest
+    container_name: vaultwarden
+    restart: unless-stopped
+    ports:
+      - "8081:80"
+    volumes:
+      - ./data:/data
+    environment:
+      - SIGNUPS_ALLOWED=false
+      - ADMIN_TOKEN=${VAULTWARDEN_ADMIN_TOKEN}   # set in .env, never commit

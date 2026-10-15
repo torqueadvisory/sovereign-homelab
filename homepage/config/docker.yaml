@@ -1,0 +1,4 @@
+# Homepage — docker.yaml
+# Lets Homepage read live container status (the green/red dots) from the Docker socket.
+my-docker:
+  socket: /var/run/docker.sock

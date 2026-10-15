@@ -1,0 +1,13 @@
+# Homepage — settings.yaml
+title: CommandCenter
+theme: dark
+color: slate
+headerStyle: clean
+target: _blank
+layout:
+  Services:
+    style: row
+    columns: 4
+  System:
+    style: row
+    columns: 3

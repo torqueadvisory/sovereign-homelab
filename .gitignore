@@ -1,0 +1,45 @@
+# ─────────────────────────────────────────────────────────────
+#  SECRETS — never commit. If it holds a real credential, it's here.
+# ─────────────────────────────────────────────────────────────
+
+# Environment files with real values
+.env
+*/.env
+**/.env
+!**/.env.example
+
+# Real (non-example) config that may carry keys/tokens/passwords
+homepage/config/services.yaml
+!homepage/config/services.yaml.example
+
+# Any file explicitly marked secret/local
+*.secret
+*.secrets
+*.local
+secrets/
+local/
+
+# Credentials, keys, certs
+*.key
+*.pem
+*.crt
+*.p12
+*.pfx
+id_ed25519*
+id_rsa*
+*.keychain-db
+
+# Backups / dumps that could contain data
+*.sql
+*.dump
+*.bak
+*.tar.gz
+*.zip
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.idea/
+.vscode/
