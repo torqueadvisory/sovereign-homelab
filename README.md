@@ -2,6 +2,8 @@
 
 ![CommandCenter — live operations dashboard](docs/img/dashboard.png)
 
+![CommandCenter — live operations dashboard](docs/img/dashboard.png)
+
 A self-hosted personal cloud and multi-device fleet, owned outright. No rented storage, no third-party clouds holding the data. One always-on server, reachable privately from anywhere, running the services a household actually uses — files, photos, passwords — plus a live operations dashboard that shows the whole stack breathing in real time.
 
 Built as a reinvention project: turning tech from an interest into a working skill by designing, deploying, and operating real infrastructure end to end.
