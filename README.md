@@ -78,7 +78,7 @@ flowchart TD
 
 ## Access & Security Model
 
-- **Private by default.** All services sit behind [Tailscale](https://tailscale.com). There are no public ports, no exposed IPs. The attack surface from the open internet is zero.
+- **Private by default.** All services sit behind [Tailscale](https://tailscale.com). There are no public ports and no exposed IPs; the only way to reach a service is as an authenticated device on the mesh.
 - **HTTPS via Tailscale Serve** on the services that front it, so traffic is encrypted end to end even inside the mesh.
 - **Secrets never live in this repo.** Every credential — DB passwords, API keys, app tokens — is stored in the self-hosted Vaultwarden vault, and excluded from version control via `.gitignore`. The committed configs are sanitized templates with placeholders.
 - **Nightly backups** of the live data to a separate physical drive, scheduled with a macOS LaunchAgent.
