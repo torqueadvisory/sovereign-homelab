@@ -5,7 +5,7 @@
 
 A self-hosted personal cloud and multi-device fleet, owned outright. No rented storage, no third-party clouds holding the data. One always-on server, reachable privately from anywhere, running the services a household actually uses — files, photos, passwords — plus a live operations dashboard that shows the whole stack breathing in real time.
 
-Built as a reinvention project: turning tech from an interest into a working skill by designing, deploying, and operating real infrastructure end to end.
+Built as a reinvention project. After 16 years running multi-site operations and P&Ls, I'm pointing that same operator's discipline at the systems themselves, designing, deploying, and running real infrastructure end to end instead of just buying it.
 
 > **Why "sovereign"?** Every byte lives on hardware I own. Nothing is rented, nothing is hostage to a subscription, and the server is invisible to the open internet by design — reachable only across a private mesh.
 
@@ -20,7 +20,7 @@ flowchart TD
         IPAD["iPad<br/>terminal + files"]
         S26["Galaxy S26 Ultra<br/>daily driver"]
         FOLD["Galaxy Z Fold<br/>camera + DeX"]
-        A16["Galaxy A16<br/>Kali field deck"]
+        A16["Galaxy A16<br/>security learning lab"]
     end
 
     TS(("Tailscale Mesh<br/>WireGuard, private"))
@@ -61,7 +61,7 @@ flowchart TD
 | iPad | One-tap terminal (Blink + Mosh + tmux) and file access |
 | Galaxy S26 Ultra | Daily driver |
 | Galaxy Z Fold | Main camera + DeX pocket workstation |
-| Galaxy A16 | Mobile Kali / recon field deck |
+| Galaxy A16 | Mobile security learning lab (Kali NetHunter) |
 
 ## The Stack
 
